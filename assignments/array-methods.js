@@ -94,7 +94,7 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 //The event director wants to honor people who might be students or work at schools
-let studentsOrTeachers = runners.filter((runner) => runner.email.indexOf('.edu') > runner.email.length - 1);
+let studentsOrTeachers = runners.filter((runner) => runner.email.indexOf('.edu') < runner.email.length - 1);
 
 // Problem 2
 
