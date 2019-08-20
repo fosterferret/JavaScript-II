@@ -66,7 +66,7 @@ console.log(fullName);
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
 let firstNamesAllCaps = [];
-allCaps = runners.map(runner => {
+firstNamesAllCaps = runners.map(runner => {
   return runner.first_name.toUpperCase();
 });
 console.log(firstNamesAllCaps);
