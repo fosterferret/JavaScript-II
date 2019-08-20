@@ -77,4 +77,7 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  const zeroDuplicates = new Set(array);
+  const zeroDuplicatesArray = [...zeroDuplicates];
+  return cb(zeroDuplicatesArray);
 }
