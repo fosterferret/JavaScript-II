@@ -46,7 +46,7 @@ function getLength(arr, cb) {
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-    cb (array[array.length - 1]);
+   return cb (array[array.length - 1]);
 }
 
 function sumNums(x, y, cb) {
@@ -58,16 +58,16 @@ function sumNums(x, y, cb) {
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
     let multiplicationResult = x * y;
-    cb(multiplicationResult);
+    return cb(multiplicationResult);
 }
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
   if (list.includes(item)) {
-    cb(true);
+    return cb(true);
   } else {
-    cb (false);
+    return cb (false);
   }
 }
 
