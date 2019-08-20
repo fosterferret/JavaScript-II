@@ -35,6 +35,9 @@ const counterMaker = () => {
   }
   return counter;
 };
+
+let myCounter = counterMaker();
+console.log(myCounter())
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2
