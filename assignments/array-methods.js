@@ -97,5 +97,11 @@ console.log(ticketPriceTotal);
 let studentsOrTeachers = runners.filter((runner) => runner.email.indexOf('.edu') < runner.email.length - 1);
 
 // Problem 2
+let highestDonors = [];
+
+highestDonors = runners.filter(runner => {
+    return runner.donation >= 250;
+});
+
 
 // Problem 3
