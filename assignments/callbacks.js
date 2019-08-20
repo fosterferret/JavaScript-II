@@ -46,19 +46,19 @@ function getLength(arr, cb) {
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-  return cb (array[array.length - 1]);
+    cb (array[array.length - 1]);
 }
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
     let sumResult = x + y;
-    return cb(sumResult);
+    cb(sumResult);
 }
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
     let multiplicationResult = x * y;
-    return cb(multiplicationResult);
+    cb(multiplicationResult);
 }
 
 function contains(item, list, cb) {
