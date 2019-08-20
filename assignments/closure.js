@@ -29,6 +29,11 @@ const counterMaker = () => {
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
+  let count = 0;
+  const counter = () => {
+    console.log(++count);
+  }
+  return counter;
 };
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
@@ -43,4 +48,17 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let count = 0;
+
+  const counterObj = {
+    increment: () => {
+      console.log(++count);
+    },
+    decrement: () => {
+      console.log(--count);
+    }
+  }
+
+  return counterObj;
 };
+
