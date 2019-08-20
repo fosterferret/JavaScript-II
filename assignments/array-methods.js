@@ -102,6 +102,7 @@ let highestDonors = [];
 highestDonors = runners.filter(runner => {
   return runner.donation >= 250;
 });
+console.log(highestDonors);
 
 
 // Problem 3
