@@ -59,7 +59,7 @@ const runners = [
 // The event director needs both the first and last names of each runner for their running bibs. Combine both the first and last names and populate a new array called `fullNames`. This array will contain just strings.
 let fullName = [];
 runners.forEach(runner => {
-    return fullName.push(`${runner.first_name} ${runner.last_name}`)
+  return fullName.push(`${runner.first_name} ${runner.last_name}`)
 });
 console.log(fullName);
 
@@ -76,7 +76,7 @@ console.log(firstNamesAllCaps);
 
 let runnersLargeSizeShirt = [];
 runnersLargeSizeShirt = runners.filter(runner => {
-    return runner.shirt_size === "L";
+  return runner.shirt_size === "L";
 });
 console.log(runnersLargeSizeShirt);
 
@@ -85,7 +85,7 @@ console.log(runnersLargeSizeShirt);
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
 let ticketPriceTotal = [];
 ticketPriceTotal = runners.reduce((accumulator, runner) => {
-    return accumulator += runner.donation;
+  return accumulator += runner.donation;
 }, 0);
 console.log(ticketPriceTotal);
 
@@ -100,8 +100,10 @@ let studentsOrTeachers = runners.filter((runner) => runner.email.indexOf('.edu')
 let highestDonors = [];
 
 highestDonors = runners.filter(runner => {
-    return runner.donation >= 250;
+  return runner.donation >= 250;
 });
 
 
 // Problem 3
+let avgDonation = runners.reduce((total, runner) => {return total + runner["donation"] / runners.length;}, 0)
+console.log(avgDonation);

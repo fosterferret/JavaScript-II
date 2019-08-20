@@ -45,7 +45,7 @@ console.log(myCounter())
 // ==== Challenge 3: Make `counterMaker` more sophisticated ====
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
 // will refuse to go over the limit, and start back at 1.
-const counterMaker = (limit) => {
+const counterMakerSophisticated = (limit) => {
   let count = 0;
   const counter = () => {
     if (count < limit) { console.log(++count); }
@@ -58,8 +58,8 @@ const counterMaker = (limit) => {
   return counter;
 };
 
-let myCounter = counterMaker();
-console.log(myCounter())
+let myCounterSophisticated = counterMakerSophisticated();
+console.log(myCounterSophisticated())
 
 
 // ==== Challenge 4: Create a counter function with an object that can increment and decrement ====
