@@ -4,6 +4,19 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+let somethingSayer = (something) => {
+  let theSomething = something;
+
+  let saySomething = () => {
+    console.log(`${theSomething}!`)
+  }
+
+  return saySomething;
+}
+
+let lambda = somethingSayer('Lambda')
+lambda();
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
@@ -16,7 +29,15 @@ const counterMaker = () => {
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
+  let count = 0;
+  const counter = () => {
+    console.log(++count);
+  }
+  return counter;
 };
+
+let myCounter = counterMaker();
+console.log(myCounter())
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2
@@ -24,10 +45,39 @@ const counterMaker = () => {
 // ==== Challenge 3: Make `counterMaker` more sophisticated ====
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
 // will refuse to go over the limit, and start back at 1.
+const counterMakerSophisticated = (limit) => {
+  let count = 0;
+  const counter = () => {
+    if (count < limit) { console.log(++count); }
+
+    else {
+      count = 1;
+      console.log(++count);
+    }
+  }
+  return counter;
+};
+
+let myCounterSophisticated = counterMakerSophisticated();
+console.log(myCounterSophisticated())
+
 
 // ==== Challenge 4: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let count = 0;
+
+  const counterObj = {
+    increment: () => {
+      console.log(++count);
+    },
+    decrement: () => {
+      console.log(--count);
+    }
+  }
+
+  return counterObj;
 };
+
